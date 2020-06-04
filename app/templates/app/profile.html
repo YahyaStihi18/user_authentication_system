@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <title>profile</title>
+</head>
+
+<body style="background-color: rgb(216, 216, 216);">
+    <br>
+    <div style="max-width: 40%; margin: auto; background-color: white; padding: 10px;">
+
+        <div class="border_top pt-3">
+
+
+            <h1> The current User:</h1>
+            <hr><h3>
+            {% if user.is_authenticated %}
+
+               username: {{ user.username }}
+               <br>
+               email: {{ user.email }}
+               <hr>
+               <a href="{%url 'logout'%}"> Logout </a>
+
+               {% else %}
+               you are a guest
+               <br>
+               <hr>
+               <a href="{%url 'register'%}">register </a>
+            {% endif %}
+            <br>
+            <a href="{%url 'index'%}"> Home Page</a></h3>
+        </div>
+
+
+    </div>
+
+    <br>
+</body>
+
+</html>

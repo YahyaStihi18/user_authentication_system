@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>index</title>
+</head>
+
+<body style="background-color: rgb(216, 216, 216);">
+    <br>
+    <div style="max-width: 40%; margin: auto; background-color: white; padding: 10px;">
+
+        <div class="border_top pt-3">
+            {% if user.is_authenticated%}
+            <h1>this is the index page</h1>
+            <hr>
+            <h2 style="color: green;">you are authenticated</h2>
+            <h3><a href="{%url 'logout'%}"> Logout </a>
+            <h3><a href="{%url 'profile'%}"> Profile</a></h3>
+            <hr>
+            <h3> The current User: {{ user.username }}</h3>
+
+
+
+            {% else %}
+            <h1>this is the index page</h1>
+            <hr>
+            <h2 style="color: red;">you are NOT authenticated</h2>
+            <h3><a href="{%url 'register'%}"> Register</a>
+                <br>
+                <a href="{%url 'login'%}"> Login </a></h3>
+
+            {% endif %}
+            <hr>
+            <br>
+        </div>
+    </div>
+
+    <br>
+</body>
+
+</html>

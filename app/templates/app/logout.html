@@ -1,0 +1,28 @@
+{% load crispy_forms_tags %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>logout</title>
+</head>
+
+<body style="background-color: rgb(216, 216, 216);">
+    <br>
+    <div style="max-width: 40%; margin: auto; background-color: white; padding: 10px;">
+        <legend class="border-bottom mb-4">you are loged out!</legend>
+
+        <div class="border_top pt-3">
+            <small class="text-muted">
+                have an account?<a href="{% url 'login'%}">log in again</a>
+                <hr>
+               
+                <a href="{% url 'index'%}">Home Page</a>
+
+            </small>
+        </div>
+    </div>
+</body>
+
+</html>

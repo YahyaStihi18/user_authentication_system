@@ -1,0 +1,44 @@
+{% load crispy_forms_tags %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>login</title>
+</head>
+
+<body style="background-color: rgb(216, 216, 216);">
+    <main role="main" class="container">
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message}}
+
+            {% endfor %}
+            {% endif %}
+
+        </div>
+        <br>
+        <div style="max-width: 40%; margin: auto; background-color: white; padding: 10px;">
+            <form method="POST">
+
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Log in</legend>
+                </fieldset>
+                {{ form|crispy }}
+
+                <button type="submit" class="btn btn-outline-primary" style="width: 100%;">Log in</button>
+            </form>
+            <div class="border_top pt-3">
+                <small class="text-muted">
+                    dont have an account?<a href="{% url 'register' %}">Sign up</a>
+                </small>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
